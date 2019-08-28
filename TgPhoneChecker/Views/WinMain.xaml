@@ -1,0 +1,46 @@
+﻿<Window x:Class="TgPhoneChecker.Views.WinMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TgPhoneChecker.Views"
+        mc:Ignorable="d"
+        Title="WinMain" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Name="TxtFilePath" IsReadOnly="True" Text="Phone Number Text File" />
+            <Button Name="BtnBrowse" Content="Browse" Grid.Column="1" Click="BtnBrowse_Click" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Name="TxtSaveFilePath" IsReadOnly="True" Text="File To Save" />
+            <Button Name="BtnSaveBrowse" Content="Browse" Grid.Column="1" Click="BtnSaveBrowse_Click" />
+        </Grid>
+        <ScrollViewer Grid.Row="2">
+            <StackPanel Name="Sp" />
+        </ScrollViewer>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Name="BtnStart" Content="Start" Click="BtnStart_Click" Grid.ColumnSpan="2" />
+            <Button Name="BtnPause" Content="Pause" Visibility="Collapsed" Click="BtnPause_Click" />
+            <Button Name="BtnCancel" Content="Cancel" Grid.Column="1" 
+                    Visibility="Collapsed" Click="BtnCancel_Click" />
+        </Grid>
+    </Grid>
+</Window>
